@@ -66,7 +66,7 @@ class FruitContract extends Contract {
     async sellFruits(ctx, fruitId, ownerName) {
         const exists = await this.fruitExists(ctx, fruitId);
         if (!exists) {
-            throw new Error(`The apple ${fruitId} does not exist`);
+            throw new Error(`The fruit with ID ${fruitId} does not exist`);
         }
         const asset = { currentOwner: ownerName };
         const buffer = Buffer.from(JSON.stringify(asset));
